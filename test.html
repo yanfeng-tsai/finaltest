@@ -10,7 +10,7 @@
   <div class="promo-banner">
     <div class="nav-right">
       <div class="search-container">
-        <input type="text" class="search-input" placeholder="搜索商品...">
+        <input type="text" class="search-input" placeholder="搜索商品..."> <!-- 搜索輸入框 -->
         <div class="nav-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"/>
@@ -18,19 +18,26 @@
           </svg>
         </div>
       </div>
+            
+      <!-- 顯示購物車圖標及數量 -->
       <div class="cart-icon-container">
         <div class="nav-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M20 7l-8 4-8-4V5l8 4 8-4v2z"/>
             <path d="M4 7v10l8 4 8-4V7"/>
           </svg>
+          <!-- 顯示購物車中的商品數量 -->
           <span class="cart-count">0</span>
         </div>
+
+        <!-- 購物車下拉選單 -->
         <div class="cart-dropdown">
-          <p class="cart-empty-text">購物車目前是空的！</p>
-          <a href="https://shop.popmart.com/wishlist">我的收藏清單</a>
+          <p class="cart-empty-text">購物車目前是空的！</p> 
+          <a href="https://shop.popmart.com/wishlist">我的收藏清單</a> 
         </div>
       </div>
+            
+      
       <div class="member-icon-container">
         <div class="nav-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -47,15 +54,17 @@
         </div>
       </div>
     </div>
+
     <div class="promo-text">
       優惠活動進行中，現在購買即送300元購物金，<a href="#membership" style="color: #FFD700; text-decoration: underline;">立即加入</a>
     </div>
   </div>
-<!-- 網站主導航 -->
+
+<!-- 網站 -->
 <nav>
   <div class="nav-links">
     <a href="#home">首頁</a>
-    <a href="countdown-container">聖誕節商品</a>
+    <a href="#countdown-container">聖誕節商品</a>
     <a href="#countdown-container">所有商品</a>
     <div class="popmart-dropdown" style="position: relative; display: inline-block;">
       <a href="#" style="display: flex; align-items: center; gap: 4px;">
@@ -489,16 +498,20 @@
       }
     });
   }, {
-    threshold: 0.1
+    threshold: 0.1 // 當元素的10%進入視口時觸發
   });
+
+    
+  // 設置每個商品卡片的初始樣式
   document.querySelectorAll('.product-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
+    card.style.opacity = '0';// 初始不透明度設為0
+    card.style.transform = 'translateY(20px)';// 初始位移設為20px
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';// 過渡效果
+    observer.observe(card);// 開始觀察商品卡片
   });
+  // 處理會員註冊表單提交
   function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault();// 防止表單默認提交
     const formData = {
       name: document.getElementById('name').value,
       email: document.getElementById('email').value,
@@ -506,41 +519,49 @@
       phone: document.getElementById('phone').value
     };
     alert('註冊成功！歡迎加入POPMART LABUBU會員！');
-    event.target.reset();
-    return false;
+    event.target.reset();// 清空表單
+    return false;// 防止表單的實際提交
   }
+  // 平滑滾動到指定的anchor區域
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+      e.preventDefault();// 防止默認行為
       document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth'// 使用平滑滾動
       });
     });
   });
+  // 顯示登入模態框
   function showLoginModal() {
     document.getElementById('login-modal').style.display = 'block';
   }
+   // 隱藏登入模態框
   function hideLoginModal() {
     document.getElementById('login-modal').style.display = 'none';
   }
+   // 處理登入表單提交
   function handleLogin(event) {
-    event.preventDefault();
+    event.preventDefault();// 防止表單默認提交
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
-    console.log('Login attempt:', email);
-    hideLoginModal();
-    alert('登入成功！');
-    return false;
+    console.log('Login attempt:', email); // 在控制台打印登入嘗試
+    hideLoginModal(); // 隱藏登入模態框
+    alert('登入成功！'); // 登入成功提示
+    return false; // 防止表單的實際提交
   }
+  // 設置登入按鈕的事件監聽器
   document.querySelector('.member-dropdown a[href="#"]').addEventListener('click', function (e) {
-    e.preventDefault();
-    showLoginModal();
+    e.preventDefault(); // 防止默認行為
+    showLoginModal(); // 顯示登入模態框
   });
+
+  // 點擊模態框以外的區域隱藏模態框
   document.getElementById('login-modal').addEventListener('click', function (e) {
     if (e.target === this) {
-      hideLoginModal();
+      hideLoginModal(); // 隱藏模態框
     }
   });
+  // 顯示訂單頁面
   function showOrdersPage() {
     const mainContent = document.createElement('div');
     mainContent.style.padding = '120px 2rem 2rem';
@@ -561,19 +582,22 @@
     `;
     const currentContent = document.querySelector('main') || document.querySelector('section:not(nav)');
     if (currentContent) {
-      currentContent.parentNode.insertBefore(mainContent, currentContent);
-      currentContent.style.display = 'none';
+      currentContent.parentNode.insertBefore(mainContent, currentContent); // 在當前內容之前插入新內容
+      currentContent.style.display = 'none'; // 隱藏當前內容
     }
   }
+  // 設置訂單按鈕的事件監聽器
   document.querySelector('a[href="https://shop.popmart.com/orders"]').addEventListener('click', function (e) {
-    e.preventDefault();
-    showOrdersPage();
+    e.preventDefault(); // 防止默認行為
+    showOrdersPage(); // 顯示訂單頁面
   });
+  // 顯示優惠券頁面
   function showCouponsPage() {
     const mainContent = document.createElement('div');
     mainContent.style.padding = '120px 2rem 2rem';
     mainContent.style.maxWidth = '1400px';
     mainContent.style.margin = '0 auto';
+    // 生成優惠券頁面內容
     mainContent.innerHTML = `
       <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 2rem;">我的優惠券</h2>
       <div id="coupons-container" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -588,23 +612,25 @@
     `;
     const currentContent = document.querySelector('main') || document.querySelector('section:not(nav)');
     if (currentContent) {
-      currentContent.parentNode.insertBefore(mainContent, currentContent);
-      currentContent.style.display = 'none';
+      currentContent.parentNode.insertBefore(mainContent, currentContent); // 在當前內容之前插入新內容
+      currentContent.style.display = 'none'; // 隱藏當前內容
     }
   }
+  // 設置優惠券按鈕的事件監聽器
   document.querySelector('a[href="https://shop.popmart.com/coupons"]').addEventListener('click', function (e) {
-    e.preventDefault();
-    showCouponsPage();
+    e.preventDefault(); // 防止默認行為
+    showCouponsPage(); // 顯示優惠券頁面
   });
   
+  // 初始化倒計時
   function initializeCountdown() {
-    // 設置結束日期
+    // 設置促銷結束日期
     const endDate = new Date();
-    endDate.setDate(endDate.getDate() + 1);
+    endDate.setDate(endDate.getDate() + 1); // 定義結束日期為今天的下一天
     
     function updateCountdown() {
       const now = new Date();
-      const distance = endDate - now;
+      const distance = endDate - now;// 計算當前時間與結束時間之間的差距
       
       // 計算天、時、分、秒
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -612,6 +638,7 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       
+      // 更新倒計時顯示
       document.getElementById('countdown').innerHTML = `
         <div class="countdown-item">${days}<span>天</span></div>
         <div class="countdown-item">${hours}<span>時</span></div>
@@ -626,11 +653,11 @@
       }
     }
     
-    updateCountdown();
-    const countdownTimer = setInterval(updateCountdown, 1000);
+    updateCountdown();// 初始化倒計時顯示
+    const countdownTimer = setInterval(updateCountdown, 1000); // 每秒更新一次
   }
   
-  document.addEventListener('DOMContentLoaded', initializeCountdown);
+  document.addEventListener('DOMContentLoaded', initializeCountdown);// 當DOM內容加載完成時，初始化倒計時
   </script>
   </body>
   </html>
