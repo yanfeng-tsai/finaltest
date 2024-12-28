@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結帳頁面</title>
+    <link rel="stylesheet" href="test.css">
+    <style>@import url(checkoutpage.css);</style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="nav-links">
+          <a href="test.html">首頁</a>
+          <a href="test.html">聖誕節商品</a>
+          <a href="test.html">所有商品</a>
+          <div class="popmart-dropdown" style="position: relative; display: inline-block;">
+            <a href="#" style="display: flex; align-items: center; gap: 4px;">
+              POPMART主題樂園
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M7 10l5 5 5-5z"/>
+              </svg>
+            </a>
+            <div class="popmart-menu">
+              <a href="https://shop.popmart.com/collections/theme-park">主題樂園限定商品</a>
+              <a href="https://shop.popmart.com/collections/labubu">LABUBU</a>
+              <a href="https://shop.popmart.com/collections/skullpanda">SKULLPANDA</a>
+              <a href="https://shop.popmart.com/collections/molly">MOLLY</a>
+              <a href="https://shop.popmart.com/collections/crybaby">CRYBABY系列</a>
+              <a href="https://shop.popmart.com/collections/pucky">PUCKY</a>
+            </div>
+          </div>
+          <a href="https://shop.popmart.com/collections/labubu">LABUBU公仔</a>
+          <a href="https://shop.popmart.com/collections/labubu-blindbox">LABUBU盲盒</a>
+          <a href="https://shop.popmart.com/collections/pre-order">新品上市</a>
+          <a href="https://shop.popmart.com/collections/popular">精選商品 </a>
+          <a href="#membership">會員專區</a>
+          
+          
+        </div>
+      </nav>
+</header>
+
+<main class="checkout-container">
+    <h1>結帳</h1>
+    <form id="checkout-form" onsubmit="handleCheckout(event)">
+        <div class="form-group">
+            <label for="payment-method">選擇付款方式：</label>
+            <select id="payment-method" required>
+                <option value="">請選擇付款方式</option>
+                <option value="credit-card">信用卡</option>
+                <option value="LinePay">LinePay</option>
+                <option value="街口支付">街口支付</option>
+                <option value="bank-transfer">銀行轉帳</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="delivery-method">選擇領取方式：</label>
+            <select id="delivery-method" required>
+                <option value="home-delivery">宅配到府</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="address">地址：</label>
+            <input type="text" id="address" placeholder="請輸入送達地址" required>
+        </div>
+
+        <button type="submit" class="submit-btn">提交訂單</button>
+    </form>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 POPMART. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+function handleCheckout(event) {
+    event.preventDefault();
+
+    // Retrieve values from the form
+    const paymentMethod = document.getElementById('payment-method').value;
+    const deliveryMethod = document.getElementById('delivery-method').value;
+    const address = document.getElementById('address').value;
+
+    // Display confirmation alert
+    alert(`訂單已提交！\n\n付款方式: ${paymentMethod}\n領取方式: ${deliveryMethod}\n地址: ${address}\n\n感謝您的購買！我們正在處理您的訂單。`);
+
+    // Redirect after alert
+    setTimeout(() => {
+        window.location.href = 'test.html'; // Redirect to homepage
+    }, 3000); // 3 seconds delay
+}
+</script>
+
+</body>
+</html>

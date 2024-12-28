@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToyDoing</title>
+  <style>@import url(test.css);</style>
+</head>
+<body>
+  <div class="promo-banner">
+    <div class="nav-right">
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="搜索商品...">
+        <div class="nav-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cart-icon-container">
+        <div class="nav-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7l-8 4-8-4V5l8 4 8-4v2z"/>
+            <path d="M4 7v10l8 4 8-4V7"/>
+          </svg>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="cart-dropdown">
+          <p class="cart-empty-text">購物車目前是空的！</p>
+          <a href="https://shop.popmart.com/wishlist">我的收藏清單</a>
+        </div>
+      </div>
+      <div class="member-icon-container">
+        <div class="nav-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          </svg>
+        </div>
+        <div class="member-dropdown">
+          <a href="#" style="cursor: pointer;">登入</a>
+          <a href="#membership">我的帳戶</a>
+          <a href="https://shop.popmart.com/orders" id="my-orders">我的訂單</a>
+          <a href="https://shop.popmart.com/coupons">我的優惠券</a>
+          <a href="#new-products">我的收藏清單</a>
+        </div>
+      </div>
+    </div>
+    <div class="promo-text">
+      優惠活動進行中，現在購買即送300元購物金，<a href="#membership" style="color: #FFD700; text-decoration: underline;">立即加入</a>
+    </div>
+  </div>
+<!-- 網站主導航 -->
+<nav>
+  <div class="nav-links">
+    <a href="#home">首頁</a>
+    <a href="countdown-container">聖誕節商品</a>
+    <a href="#countdown-container">所有商品</a>
+    <div class="popmart-dropdown" style="position: relative; display: inline-block;">
+      <a href="#" style="display: flex; align-items: center; gap: 4px;">
+        POPMART主題樂園
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+          <path d="M7 10l5 5 5-5z"/>
+        </svg>
+      </a>
+      <div class="popmart-menu">
+        <a href="#new-products">主題樂園限定商品</a>
+        <a href="#featured-products">LABUBU</a>
+        <a href="#new-products">SKULLPANDA</a>
+        <a href="#featured-products">MOLLY</a>
+        <a href="#new-products">CRYBABY系列</a>
+        <a href="#featured-products">PUCKY</a>
+      </div>
+    </div>
+    <a href="#countdown-container">LABUBU公仔</a>
+    <a href="featured-products">LABUBU盲盒</a>
+    <a href="#new-products">新品上市</a>
+    <a href="#featured-products">精選商品 </a>
+    <a href="#membership">會員專區</a>
+    
+    
+  </div>
+</nav>
+
+<section id="home" class="hero">
+  <img src="image/logo-search-grid-2x.png" alt="">
+  <h1>玩具毒癮舖 TOY DOING</h1>
+  <p>聖誕節最夯的商品/LABUBU限時商品！</p>
+  <a href="#countdown-container" class="cta-button">SHOP NOW</a>
+</section>
+
+<div id="countdown-container" class="countdown-container">
+  <div class="countdown-title">限時促銷倒計時</div>
+  <div id="countdown"></div>
+</div>
+  
+  <section id="promotional-banners" class="promotional-banners" style="padding: 2rem; background: white;">
+    <div style="display: flex; justify-content: center; gap: 2rem; max-width: 1400px; margin: 0 auto;">
+      <div style="flex: 1; max-width: 400px;">
+        <img src="image/LINE_ALBUM_27_241227_3.jpg" alt="Blind Box" style="width: 100%; height: auto; border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" >
+      </div>
+      <div style="flex: 1; max-width: 400px;">
+        <img src="image/LINE_ALBUM_27_241227_2.jpg" alt="Fashion Toys" style="width: 100%; height: auto; border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" >
+      </div>
+      <div style="flex: 1; max-width: 400px;">
+        <img src="image/LINE_ALBUM_27_241227_1.jpg" alt="R Brick" style="width: 100%; height: auto; border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" >
+      </div>
+    </div>
+  </section>
+  
+  <section id="new-products" class="new-products">
+    <h2 class="section-title">新品上市</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_4.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>LABUBU 心動馬卡龍 專用壓克力殼 吊飾</h3>
+        <p>附件：珠鏈 </p>
+          <p>適用於Labubu心動馬卡龍 盲盒 </p>
+          <p>此為壓克力殼(不含公仔)</p>
+        <div class="price">NT$ 111</div>
+        <a href="image/LINE_ALBUM_27_241227_1.jpg" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_5.jpg" alt="2024新春LABUBU2" class="product-image">
+        <h3>MEGA LABUBU TEC 小雀斑 1000%</h3>
+        <p>尺寸：約79.3cm (高)材質：PVC</p>
+        <div class="price">NT$ 33000</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu2" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_6.jpg" alt="2024新春LABUBU3" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU 萬聖節 搪膠 掛件 南瓜</h3>
+        <p>尺寸：約17.5cm (高)材質：聚酯纖維</p>
+        <div class="price">NT$ 3800</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu3" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_7.jpg" alt="2024新春LABUBU4" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU THE MONSTERS HAVE A SEAT 坐坐派對 搪膠毛絨 系列盲盒</h3>
+        <p>尺寸：約13m</p>
+        <div class="price">NT$ 990</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu4" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_8.jpg" alt="2024新春LABUBU5" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU THE MONSTERS 夏日 FLIP WITH ME 搪膠毛絨 公仔</h3>
+        <p>尺寸：約20*15*40cm (長/寬/高)
+          材質：聚酯纖維、絨布</p>
+        <div class="price">NT$ 4200</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu5" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_9.jpg" alt="2024新春LABUBU6" class="product-image">
+        <h3>POPMART 泡泡瑪特 Labubu x Pronounce - Wings Of Fantasy 米蘭2.0 搪膠毛絨 吊卡</h3>
+        <p>尺寸：11*8*17.5cm（長/寬/高）不含扣環
+          附件：衣服</p>
+        <div class="price">NT$ 4000</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu6" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_10.jpg" alt="2024新春LABUBU7" class="product-image">
+        <h3>POPMART 泡泡瑪特 Labubu 心動馬卡龍 一代 搪膠臉 系列盲盒
+        </h3>
+        <p>尺寸：約17m</p>
+        <div class="price">NT$ 990</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu7" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_11.jpg" alt="2024新春LABUBU8" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU 森林秘密基地拼搭積木 套組
+        </h3>
+        <p>整組5款，整組販售。</p>
+        <div class="price">NT$ 9900</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu8" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_12.jpg" alt="2024新春LABUBU9" class="product-image">
+        <h3>POPMART 泡泡瑪特 MEGA LABUBU TEC 我們 1000%
+        </h3>
+        <p>尺寸：約79.3cm (高)</p>
+          <P>材質：PVC、植絨</P>
+          <p>附件：TYCOCO磁吸配件、收藏卡、產品說明書、NFC鑑定功能</p>
+          <p>備註：全球限量1699體</p>
+          
+        <div class="price">NT$ 58000</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu9" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_13.jpg" alt="2024新春LABUBU10" class="product-image">
+        <h3>POPMART 泡泡瑪特 MEGA LABUBU TEC 素描 1000%
+        </h3>
+        <p>尺寸：約80cm (高)
+          材質：PVC</p>
+        <div class="price">NT$ 42900</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu10" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_14.jpg" alt="2024新春LABUBU11" class="product-image">
+        <h3>POPMART 泡泡瑪特 MEGA LABUBU TEC 素描 400%</h3>
+        <p>尺寸：約35cm (高)
+          材質：PVC</p>
+        <div class="price">NT$ 990</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu11" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_15.jpg" alt="2024新春LABUBU12" class="product-image">
+        <h3>POPMART 泡泡瑪特 THE MONSTERS ZIMOMO ANGEL IN CLOUDS 大首領 銀翼天使 搪膠毛絨公仔</h3>
+        <p>尺寸：約58cm (高)
+        </p>
+        <div class="price">NT$ 14800</div>
+        <a href="https://shop.popmart.com/products/new-year-labubu12" class="cta-button">加入購物車</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="featured-products" class="featured-products">
+    <h2 class="section-title">精選商品</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_16.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU 閃閃驚喜 毛絨卡套 系列盲盒
+        </h3>
+        <p>一中盒6抽</p>
+          <P>款式：基本款 6、隱藏款 1</P>
+          <P>尺寸：約18cm</P>
+          <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 890</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_17.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 THE MONSTERS Labubu x 可口可樂 搪膠毛絨吊飾 系列盲盒
+        </h3>
+        <p>一中盒6抽</p>
+          <P>款式：基本款 6、隱藏款 1</P>
+          <P>尺寸：約18cm</P>
+          <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 1200</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu2" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_18.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 城市樂園 閃閃童話 冰箱貼 系列盲盒
+        </h3>
+        <p>一中盒6抽</p>
+        <P>款式：基本款 6、隱藏款 1</P>
+        <P>尺寸：約18cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>        <div class="price">NT$ 380</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu3" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_19.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU x 可口可樂 大派對 系列盲盒</h3>
+        <p>一中盒6抽</p>
+        <P>款式：基本款 6、隱藏款 1</P>
+        <P>尺寸：約18cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>        
+        <div class="price">NT$ 400</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu4" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_20.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU 慵懶瑜珈 系列盲盒</h3>
+        <p>一中盒6抽</p>
+        <P>款式：基本款 6、隱藏款 1</P>
+        <P>尺寸：約18cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 480</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu5" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_21.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU THE MONSTERS 夏日 FLIP WITH ME 搪膠毛絨 公仔</h3>
+        <p>一中盒6抽</p>
+        <P>款式：基本款 6、隱藏款 1</P>
+        <P>尺寸：約18cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 4200</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu6" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_22.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 ZIMOMO LABUBU ORIGINAL 首領 毛絨 娃娃</h3>
+        <p>一中盒6抽</p>
+        <P>款式：基本款 6、隱藏款 1</P>
+        <P>尺寸：約18cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 13800</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu7" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_23.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU 精靈玩具 系列盲盒
+        </h3>
+        <p>一中盒10抽</p>
+        <P>款式：基本款 12、隱藏款 1</P>
+        <P>尺寸：約10cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 890</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu8" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_24.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU x 可口可樂 大派對 系列盲盒
+        </h3>
+        <p>一中盒10抽</p>
+        <P>款式：基本款 12、隱藏款 1</P>
+        <P>尺寸：約10cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 400</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu9" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_25.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU 毛絨翻翻 手提包 樂園限定        </h3>
+        <p>一中盒10抽</p>
+        <P>款式：基本款 12、隱藏款 1</P>
+        <P>尺寸：約10cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 890</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu10" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_26.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 LABUBU 藍帽 站肩磁吸 毛絨 娃娃 樂園限定        </h3>
+        <p>一中盒10抽</p>
+        <P>款式：基本款 12、隱藏款 1</P>
+        <P>尺寸：約10cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 890</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu11" class="cta-button">加入購物車</a>
+      </div>
+      <div class="product-card">
+        <img src="image/LINE_ALBUM_27_241228_27.jpg" alt="2024新春LABUBU" class="product-image">
+        <h3>POPMART 泡泡瑪特 怪怪狂歡 南瓜夜光冰箱貼        </h3>
+        <p>一中盒10抽</p>
+        <P>款式：基本款 12、隱藏款 1</P>
+        <P>尺寸：約10cm</P>
+        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <div class="price">NT$ 310</div>
+        <a href="https://shop.popmart.com/products/christmas-labubu12" class="cta-button">加入購物車</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="membership" class="membership">
+    <h2 class="section-title">會員專區</h2>
+    <form class="membership-form" onsubmit="return handleSubmit(event)">
+      <div class="form-group">
+        <label for="name">姓名</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">電子郵件</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">密碼</label>
+        <input type="password" id="password" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">手機號碼</label>
+        <input type="tel" id="phone" required>
+      </div>
+      <button type="submit" class="submit-btn">加入會員</button>
+    </form>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h3>公司資訊</h3>
+          <p>公司：秦庭岩有限公司</p>
+          <p><a href="abouttoydoing.html">關於TOYDOING</a> | <a href="mailto:chi092113@gmail.com">聯繫我們</a></p>
+          <p>電子郵件：<a href="mailto:chi092113@gmail.com">chi092113@gmail.com</a></p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>門市資訊</h3>
+          <p>中原店</p>
+          <p>門市電話：<a href="tel:0906186722">0906186722</a></p>
+          <p>營業時間：11:00-22:00</p>
+          <p>地址：320桃園市中壢區中北路200號</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>CUSTOMER CARE</h3>
+          <p><a href="know.html">購物指南</a></p>
+          <p><a href="privacy.html">隱私政策</a></p>
+        </div>
+        <div class="nav-dropdowns">
+        <select class="currency-select" onchange="changeCurrency(this.value)">
+          <option value="TWD">NT$ TWD</option>
+          <option value="USD">US$ USD</option>
+        </select>
+        <select class="language-select" onchange="changeLanguage(this.value)">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      </div>
+    </div>
+  </footer>
+  
+  <div id="login-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+    <div style="position: relative; max-width: 400px; margin: 100px auto; background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+      <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">登入</h2>
+      <form id="login-form" onsubmit="return handleLogin(event)">
+        <div class="form-group">
+          <label for="login-email">請輸入電子郵件或手機號碼</label>
+          <input type="text" id="login-email" required style="width: 100%; padding: 0.8rem; border: 2px solid var(--light); border-radius: 10px; margin-bottom: 1rem;">
+        </div>
+        <div class="form-group">
+          <label for="login-password">密碼</label>
+          <input type="password" id="login-password" required style="width: 100%; padding: 0.8rem; border: 2px solid var(--light); border-radius: 10px; margin-bottom: 1rem;">
+        </div>
+        <a href="https://shop.popmart.com/forgot-password" style="display: block; text-align: right; color: var(--primary); text-decoration: none; margin-bottom: 1rem;">忘記密碼？</a>
+        <button type="submit" class="submit-btn">開始購物</button>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+  // 初始化購物車及倒計時邏輯
+  const cartItems = [];
+  let cartCount = 0;
+  const cartCountElement = document.querySelector('.cart-count');
+
+  // 更新購物車內容
+  function updateCart() {
+    const cartDropdown = document.querySelector('.cart-dropdown');
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    if (cartItems.length === 0) {
+      cartDropdown.innerHTML = `
+          <p class="cart-empty-text">購物車目前是空的！</p>
+          <a href="shopcar.html">我的收藏清單</a>
+        `;
+    } else {
+      let cartHTML = '<div class="cart-items">';
+      cartItems.forEach(item => {
+        cartHTML += `
+            <div class="cart-item">
+              <h4>${item.name}</h4>
+              <p>${item.price}</p>
+            </div>
+          `;
+      });
+      cartHTML += '</div>';
+      cartHTML += `
+        <a href="shopcar.html" class="cta-button" style="width: 100%; margin-top: 1rem; text-align: center;">立即購買</a>
+      `;
+      cartDropdown.innerHTML = cartHTML;
+    }
+  }
+  // 設置icon上的 "加入購物車" 按鈕邏輯
+  document.querySelectorAll('.cta-button').forEach(button => {
+    if (button.textContent === '加入購物車') {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const card = this.closest('.product-card');
+        const productName = card.querySelector('h3').textContent;
+        const productPrice = card.querySelector('.price').textContent;
+        // 將商品加入購物車陣列
+        cartItems.push({
+          name: productName,
+          price: parseFloat(productPrice.replace('NT$', '').trim()), // 確保價格為數字
+          quantity: 1, // 初始數量設為1
+          image: 'path/to/image.jpg' // 包含商品的圖片路徑
+        });
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        cartCount++;// 更新購物車數量
+        cartCountElement.textContent = cartCount;
+        updateCart();
+        alert('商品已加入購物車！');
+      });
+    }
+  });
+  // 使用 IntersectionObserver 為商品卡片添加動畫
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+  });
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value,
+      phone: document.getElementById('phone').value
+    };
+    alert('註冊成功！歡迎加入POPMART LABUBU會員！');
+    event.target.reset();
+    return false;
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+  function showLoginModal() {
+    document.getElementById('login-modal').style.display = 'block';
+  }
+  function hideLoginModal() {
+    document.getElementById('login-modal').style.display = 'none';
+  }
+  function handleLogin(event) {
+    event.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    console.log('Login attempt:', email);
+    hideLoginModal();
+    alert('登入成功！');
+    return false;
+  }
+  document.querySelector('.member-dropdown a[href="#"]').addEventListener('click', function (e) {
+    e.preventDefault();
+    showLoginModal();
+  });
+  document.getElementById('login-modal').addEventListener('click', function (e) {
+    if (e.target === this) {
+      hideLoginModal();
+    }
+  });
+  function showOrdersPage() {
+    const mainContent = document.createElement('div');
+    mainContent.style.padding = '120px 2rem 2rem';
+    mainContent.style.maxWidth = '1400px';
+    mainContent.style.margin = '0 auto';
+    // 生成訂單頁面內容
+    mainContent.innerHTML = `
+      <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 2rem;">我的訂單</h2>
+      <div id="orders-container" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <div style="text-align: center; color: var(--text); padding: 2rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 64px; height: 64px; margin-bottom: 1rem; color: var(--light)">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          </svg>
+          <p>目前沒有訂單記錄</p>
+          <a href="#" class="cta-button" style="margin-top: 1rem; display: inline-block;">開始購物</a>
+        </div>
+      </div>
+    `;
+    const currentContent = document.querySelector('main') || document.querySelector('section:not(nav)');
+    if (currentContent) {
+      currentContent.parentNode.insertBefore(mainContent, currentContent);
+      currentContent.style.display = 'none';
+    }
+  }
+  document.querySelector('a[href="https://shop.popmart.com/orders"]').addEventListener('click', function (e) {
+    e.preventDefault();
+    showOrdersPage();
+  });
+  function showCouponsPage() {
+    const mainContent = document.createElement('div');
+    mainContent.style.padding = '120px 2rem 2rem';
+    mainContent.style.maxWidth = '1400px';
+    mainContent.style.margin = '0 auto';
+    mainContent.innerHTML = `
+      <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 2rem;">我的優惠券</h2>
+      <div id="coupons-container" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <div style="text-align: center; color: var(--text); padding: 2rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 64px; height: 64px; margin-bottom: 1rem; color: var(--light)">
+            <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
+          </svg>
+          <p>目前沒有可用的優惠券</p>
+          <a href="#" class="cta-button" style="margin-top: 1rem; display: inline-block;">開始購物</a>
+        </div>
+      </div>
+    `;
+    const currentContent = document.querySelector('main') || document.querySelector('section:not(nav)');
+    if (currentContent) {
+      currentContent.parentNode.insertBefore(mainContent, currentContent);
+      currentContent.style.display = 'none';
+    }
+  }
+  document.querySelector('a[href="https://shop.popmart.com/coupons"]').addEventListener('click', function (e) {
+    e.preventDefault();
+    showCouponsPage();
+  });
+  
+  function initializeCountdown() {
+    // 設置結束日期
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 1);
+    
+    function updateCountdown() {
+      const now = new Date();
+      const distance = endDate - now;
+      
+      // 計算天、時、分、秒
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      document.getElementById('countdown').innerHTML = `
+        <div class="countdown-item">${days}<span>天</span></div>
+        <div class="countdown-item">${hours}<span>時</span></div>
+        <div class="countdown-item">${minutes}<span>分</span></div>
+        <div class="countdown-item">${seconds}<span>秒</span></div>
+      `;
+      
+      // 當時間結束時清除計時器
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = "促銷活動已結束！";
+      }
+    }
+    
+    updateCountdown();
+    const countdownTimer = setInterval(updateCountdown, 1000);
+  }
+  
+  document.addEventListener('DOMContentLoaded', initializeCountdown);
+  </script>
+  </body>
+  </html>
+
+  

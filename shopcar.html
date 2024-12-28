@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車</title>
+    <link rel="stylesheet" href="test.css">
+    <style>@import url('shopcar.css');</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+              <a href="test.html">首頁</a>
+              <a href="test.html">聖誕節商品</a>
+              <a href="test.html">所有商品</a>
+              <div class="popmart-dropdown" style="position: relative; display: inline-block;">
+                <a href="#" style="display: flex; align-items: center; gap: 4px;">
+                  POPMART主題樂園
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path d="M7 10l5 5 5-5z"/>
+                  </svg>
+                </a>
+                <div class="popmart-menu">
+                    <a href="test.html#new-products">主題樂園限定商品</a>
+                    <a href="test.html#featured-products">LABUBU</a>
+                    <a href="test.html#new-products">SKULLPANDA</a>
+                    <a href="test.html#featured-products">MOLLY</a>
+                    <a href="test.html#new-products">CRYBABY系列</a>
+                    <a href="test.html#featured-products">PUCKY</a>
+                </div>
+              </div>
+              <a href="test.html#new-products">LABUBU公仔</a>
+              <a href="test.html#featured-products">LABUBU盲盒</a>
+              <a href="test.html#new-products">預購商品</a>
+              <a href="test.html#new-products">人氣商品 </a>
+              <a href="test.html#membership">會員專區</a>
+              
+              
+            </div>
+          </nav>
+    </header>
+
+    <main class="cart-container">
+        <h1>購物車</h1>
+        <div class="cart-items">
+            <!-- 商品項目會動態插入 -->
+        </div>
+        <div class="cart-summary">
+            <p>總計：<span class="total-price">NT$ 0</span></p>
+            <a href="checkoutpage.html" class="checkout-button">前往結帳</a> <!-- Ensure this points to the correct checkout page -->
+        </div>
+        <p class="empty-cart-message" style="display: none;">您的購物車是空的！</p>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 POPMART. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+const cartItemsContainer = document.querySelector('.cart-items');
+const totalPriceElement = document.querySelector('.total-price');
+const emptyCartMessage = document.querySelector('.empty-cart-message');
+const checkoutButton = document.querySelector('.checkout-button');
+
+function updateCartDisplay() {
+    cartItemsContainer.innerHTML = ''; // 清空顯示區域
+    let total = 0; // 初始化總金額
+
+    if (cartItems.length === 0) {
+        emptyCartMessage.style.display = 'block'; // 顯示空購物車訊息
+        checkoutButton.style.display = 'none';    // 隱藏結帳按鈕
+        totalPriceElement.textContent = 'NT$ 0'; // 設定總金額為0
+        return;
+    }
+
+    emptyCartMessage.style.display = 'none'; // 隱藏空購物車訊息
+    checkoutButton.style.display = 'inline-block'; // 顯示結帳按鈕
+
+    cartItems.forEach((item, index) => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+
+        itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+            <div class="cart-item-details">
+                <h3 class="cart-item-name">${item.name}</h3>
+                <p class="cart-item-price">NT$ ${item.price}</p>
+                <input type="number" class="cart-item-quantity" value="${item.quantity}" min="1" data-index="${index}">
+            </div>
+            <button class="remove-item" data-index="${index}">移除</button>
+        `;
+
+        cartItemsContainer.appendChild(itemElement); // 將商品顯示到容器中
+        total += item.price * item.quantity;// 累加每個商品的總金額
+    });
+    
+    totalPriceElement.textContent =` NT$ ${total}`; // 更新總金額顯示
+}
+
+cartItemsContainer.addEventListener('input', (e) => {
+    if (e.target.classList.contains('cart-item-quantity')) {
+        const index = e.target.dataset.index;
+        const newQuantity = parseInt(e.target.value);
+
+        // Ensure quantity does not go below 1
+        if (newQuantity < 1) {
+            e.target.value = 1; // reset value to 1
+            return;
+        }
+
+        cartItems[index].quantity = newQuantity;
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        updateCartDisplay();
+    }
+});
+
+cartItemsContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-item')) {
+        const index = e.target.dataset.index;
+        cartItems.splice(index, 1);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        updateCartDisplay();
+    }
+});
+
+updateCartDisplay();
+    </script>
+</body>
+</html>
