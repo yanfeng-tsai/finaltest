@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的帳戶</title>
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+  <header class="promo-banner">
+    <div class="nav-right">
+      <a href="test.html" class="nav-icon">返回首頁</a>
+    </div>
+    <div class="promo-text">歡迎來到我的帳戶</div>
+  </header>
+  
+  <section class="membership">
+    <h2 class="section-title" id="myaccount">帳戶資訊</h2>
+    <form class="membership-form" onsubmit="return updateAccount(event)">
+      <div class="form-group">
+        <label for="username">使用者名稱</label>
+        <input type="text" id="username" placeholder="請輸入您的名稱" required>
+      </div>
+      <div class="form-group">
+        <label for="email">電子郵件或電話號碼</label>
+        <input type="email" id="email" placeholder="請輸入您的電子郵件" required>
+      </div>
+      <div class="form-group">
+        <label for="password">新密碼</label>
+        <input type="password" id="password" placeholder="請輸入新密碼" required>
+      </div>
+      <button type="submit" class="submit-btn">更新密碼</button>
+    </form>
+  </section>
+
+  <section class="membership">
+    <h2 class="section-title" id="gift">我的收藏清單</h2>
+    <div id="wishlist-container">
+      <p>目前尚無收藏商品。</p>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 TOYDOING. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateAccount(event) {
+      event.preventDefault();
+      alert('帳戶資訊已更新！');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const wishlistContainer = document.getElementById('wishlist-container');
+    const wishlistItems = JSON.parse(localStorage.getItem('wishlistItems')) || [];
+    const userData = JSON.parse(localStorage.getItem('loggedInUser'));
+    const usernameField = document.getElementById('username');
+    const emailField = document.getElementById('email');
+
+    if (wishlistItems.length === 0) {
+      wishlistContainer.innerHTML = '<p>目前尚無收藏商品。</p>';
+    } else {
+      wishlistContainer.innerHTML = wishlistItems
+        .map(item => `
+          <div class="product-card">
+            <img src="${item.image}" alt="${item.name}" class="product-image">
+            <h4>${item.name}</h4>
+            <p class="price">${item.price}</p>
+          </div>
+        `)
+        .join('');
+    }
+    if (userData) {
+      // 更新帳戶資訊欄位
+      usernameField.value = userData.name;
+      emailField.value = userData.email;
+
+      // 更新歡迎文字
+      const promoText = document.querySelector('.promo-text');
+      promoText.textContent = `歡迎回來, ${userData.name}！`;
+    } else {
+      // 未登入，跳轉回主頁
+      alert("請先登入！");
+      window.location.href = "test.html";
+    }
+  });
+</script>
+</body>
+</html>

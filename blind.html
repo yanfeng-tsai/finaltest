@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blind</title>
+  <link rel="stylesheet" href="test.css">
+  <style>
+.promo-banner {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 0.75rem;
+  font-weight: 500;
+  animation: slideDown 0.5s ease;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+  display: flex;
+  justify-content: center; /* 這個可以保持其他元素的靈活性 */
+  align-items: center;
+}
+
+.promo-banner .nav-center {
+  flex: 1;  /* 讓這個 div 獲得可用空間以將其內容置中 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 讓 nav-center 內的元素在水平方向上置中 */
+}
+.nav-center {
+  display: flex; /* 使用 flexbox */
+  justify-content: center; /* 將內容居中 */
+  align-items: center; /* 垂直居中 */
+  flex: 1; /* 讓 nav-center 獲得空間 */
+}
+
+
+.cart-icon-container {
+  position: relative;
+  text-align: center;
+}
+.cart-dropdown {
+  position: absolute; /* 絕對位置 */
+  top: 100%; /* 在 nav-icon 下方 */
+  right: 0; /* 右邊顯示 */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  min-width: 250px;
+  display: none; /* 初始隱藏 */
+  z-index: 200;
+  text-align: center;
+}
+
+.cart-icon-container:hover .cart-dropdown {
+  display: block; /* 滑鼠懸停時顯示下拉選單 */
+}
+
+
+    /* 模態框背景 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* 模態框內容 */
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 30%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* 關閉按鈕 */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 模態框圖片 */
+.modal-image {
+  max-width: 30%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.product-ratings {
+  margin: 1rem 0;
+}
+
+.rating-stars {
+  color: #ddd;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.rating-stars .star {
+  margin-right: 5px;
+}
+
+.rating-stars .star.active {
+  color: gold;
+}
+
+.comments-section {
+  margin-top: 1rem;
+}
+
+#comments-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 1rem 0;
+}
+
+.comment {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+#new-comment {
+  width: 100%;
+  min-height: 80px;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+    
+  <header>
+    <div class="promo-banner">
+        <div class="nav-center"> <!-- 中間容器 -->
+                <!-- 顯示購物車圖標及數量 -->
+            <div class="cart-icon-container">
+                <div class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 7l-8 4-8-4V5l8 4 8-4v2z"/>
+                <path d="M4 7v10l8 4 8-4V7"/>
+              </svg>
+              <!-- 顯示購物車中的商品數量 -->
+              <span class="cart-count">0</span>
+                </div>
+    
+            <!-- 購物車下拉選單 -->
+                <div class="cart-dropdown">
+              <p class="cart-empty-text">購物車目前是空的！</p> 
+              <a href="account.html #membership">我的收藏清單</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+    
+
+    <nav>
+      <div class="nav-links">
+        <a href="test.html">首頁</a>
+        <a href="allproduct.html">所有商品</a>
+        <div class="popmart-dropdown" style="position: relative; display: inline-block;">
+          <a href="#" style="display: flex; align-items: center; gap: 4px;">
+            POPMART主題樂園
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </a>
+          <div class="popmart-menu">
+            <a href="allproduct.html">主題樂園限定商品</a>
+            <a href="doll.html">LABUBU公仔</a>
+            <a href="blind.html">LABUBU盲盒</a>
+            <a href="allproduct.html">SKULLPANDA</a>
+            <a href="allproduct.html">MOLLY</a>
+            <a href="allproduct.html">CRYBABY系列</a>
+            <a href="allproduct.html">PUCKY</a>
+          </div>
+        </div>
+        
+        <a href="test.html#new-products">新品上市</a>
+        <a href="test.html#featured-products">精選商品 </a>
+        <a href="account.html">會員專區</a>
+        <a href="#membership">認識我們</a>
+        
+        
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    
+    <section id="all-products" class="products">
+      <h1 class="section-title">LABUBU盲盒</h1>
+      <div class="products-grid">
+        <!-- 商品將動態插入 -->
+      </div>
+    </section>
+  </main>
+
+  <!-- 商品資訊模態框 -->
+  <div id="product-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modal-image" src alt="商品圖片;" class="modal-image">
+      <h2 id="modal-name"></h2>
+      <p id="modal-description"></p>
+      <div class="price" id="modal-price"></div>
+      <div class="product-ratings">
+        <div class="rating-stars">
+          <span class="star" data-rating="1">★</span>
+          <span class="star" data-rating="2">★</span>
+          <span class="star" data-rating="3">★</span>
+          <span class="star" data-rating="4">★</span>
+          <span class="star" data-rating="5">★</span>
+        </div>
+        <div class="rating-avg">評分: <span id="avg-rating">0</span></div>
+        <div class="comments-section">
+          <h3>商品評論</h3>
+          <div id="comments-list"></div>
+          <form id="comment-form">
+            <textarea id="new-comment" placeholder="寫下您的評論..."></textarea>
+            <button type="submit" class="cta-button">新增評論</button>
+          </form>
+        </div>
+      </div>
+      <button id="add-to-cart-btn" class="cta-button">&#x52a0;&#x5165;&#x8cfc;&#x7269;&#x8eca;</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h3>公司資訊</h3>
+          <p>公司：秦庭岩有限公司</p>
+          <p><a href="abouttoydoing.html">關於TOYDOING</a> | <a href="https://shop.popmart.com/contact">聯繫我們</a></p>
+          <p>電子郵件：<a href="mailto:chi092113@gmail.com">chi092113@gmail.com</a></p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>門市資訊</h3>
+          <p>中原店</p>
+          <p>門市電話：<a href="tel:0906186722">0906186722</a></p>
+          <p>營業時間：11:00-22:00</p>
+          <p>地址：320桃園市中壢區中北路200號</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>CUSTOMER CARE</h3>
+          <p><a href="know.html">購物指南</a></p>
+          <p><a href="privacy.html">隱私政策</a></p>
+        </div> 
+    </div>
+  </footer>
+
+
+  <script>
+    // 靜態商品數據
+    const products = [
+    {
+      name: "POPMART 泡泡瑪特 LABUBU THE MONSTERS HAVE A SEAT 坐坐派對 搪膠毛絨 系列盲盒",
+      price: 990,
+      image: "image/LINE_ALBUM_27_241228_7.jpg",
+      description: "尺寸：約13cm"
+    },
+    {
+      name: "POPMART 泡泡瑪特 LABUBU 心動馬卡龍 一代 搪膠臉 系列盲盒",
+      price: 990,
+      image: "image/LINE_ALBUM_27_241228_10.jpg",
+      description: "尺寸：約17cm"
+    },
+    {
+      name: "POPMART 泡泡瑪特 LABUBU 閃閃驚喜 毛絨卡套 系列盲盒",
+      price: 890,
+      image: "image/LINE_ALBUM_27_241228_16.jpg",
+      description: "一中盒6抽，款式：基本款 6、隱藏款 1，尺寸：約18cm，此為盲盒非指定款，中盒內款式不重複"
+    },
+    {
+      name: "POPMART 泡泡瑪特 THE MONSTERS Labubu x 可口可樂 搪膠毛絨吊飾 系列盲盒",
+      price: 1200,
+      image: "image/LINE_ALBUM_27_241228_17.jpg",
+      description: "一中盒6抽，款式：基本款 6、隱藏款 1，尺寸：約18cm，此為盲盒非指定款，中盒內款式不重複"
+    },
+    {
+      name: "POPMART 泡泡瑪特 城市樂園 閃閃童話 冰箱貼 系列盲盒",
+      price: 380,
+      image: "image/LINE_ALBUM_27_241228_18.jpg",
+      description: "一中盒6抽，款式：基本款 6、隱藏款 1，尺寸：約18cm，此為盲盒非指定款，中盒內款式不重複"
+    },
+    {
+      name: "POPMART 泡泡瑪特 LABUBU x 可口可樂 大派對 系列盲盒",
+      price: 400,
+      image: "image/LINE_ALBUM_27_241228_19.jpg",
+      description: "一中盒6抽，款式：基本款 6、隱藏款 1，尺寸：約18cm，此為盲盒非指定款，中盒內款式不重複"
+    },
+    {
+      name: "POPMART 泡泡瑪特 LABUBU 慵懶瑜珈 系列盲盒",
+      price: 480,
+      image: "image/LINE_ALBUM_27_241228_20.jpg",
+      description: "一中盒6抽，款式：基本款 6、隱藏款 1，尺寸：約18cm，此為盲盒非指定款，中盒內款式不重複"
+    },
+    {
+      name: "POPMART 泡泡瑪特 LABUBU 精靈玩具 系列盲盒",
+      price: 890,
+      image: "image/LINE_ALBUM_27_241228_23.jpg",
+      description: "一中盒10抽，款式：基本款 12、隱藏款 1，尺寸：約10cm，此為盲盒非指定款，中盒內款式不重複"
+    },
+    {
+      name: "POPMART 泡泡瑪特 LABUBU x 可口可樂 大派對 系列盲盒",
+      price: 400,
+      image: "image/LINE_ALBUM_27_241228_24.jpg",
+      description: "一中盒10抽，款式：基本款 12、隱藏款 1，尺寸：約10cm，此為盲盒非指定款，中盒內款式不重複"
+    }];
+    let productRatings = {};
+let productComments = {};
+
+function initRatingSystem(productId) {
+  const stars = document.querySelectorAll('.rating-stars .star');
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const rating = parseInt(star.dataset.rating);
+      submitRating(productId, rating);
+    });
+    
+    star.addEventListener('mouseover', () => {
+      const rating = parseInt(star.dataset.rating);
+      highlightStars(rating);
+    });
+  });
+
+  const ratingContainer = document.querySelector('.rating-stars');
+  ratingContainer.addEventListener('mouseout', () => {
+    const currentRating = productRatings[productId]?.avgRating || 0;
+    highlightStars(currentRating);
+  });
+}
+
+function highlightStars(rating) {
+  const stars = document.querySelectorAll('.rating-stars .star');
+  stars.forEach((star, index) => {
+    star.classList.toggle('active', index < rating);
+  });
+}
+
+function submitRating(productId, rating) {
+  if (!productRatings[productId]) {
+    productRatings[productId] = {
+      total: 0,
+      count: 0,
+      avgRating: 0
+    };
+  }
+  
+  productRatings[productId].total += rating;
+  productRatings[productId].count += 1;
+  productRatings[productId].avgRating = 
+    productRatings[productId].total / productRatings[productId].count;
+    
+  document.getElementById('avg-rating').textContent = 
+    productRatings[productId].avgRating.toFixed(1);
+  
+  highlightStars(productRatings[productId].avgRating);
+}
+
+function updateCartCount() {
+  const cartCountElement = document.querySelector('.cart-count');
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  cartCountElement.textContent = cartItems.length;
+}
+
+function addToCart(product) {
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  cartItems.push(product);
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  const cartDropdown = document.querySelector('.cart-dropdown');
+  if (cartDropdown) {
+    if (cartItems.length > 0) {
+      cartDropdown.innerHTML = `
+        <div class="cart-items">
+          ${cartItems.map(item => `
+            <div class="cart-item">
+              <h4>${item.name}</h4>
+              <p>NT$ ${item.price}</p>
+            </div>
+          `).join('')}
+        </div>
+        <a href="/checkout" class="cta-button">前往結帳</a>
+      `;
+    } else {
+      cartDropdown.innerHTML = `
+        <p class="cart-empty-text">購物車目前是空的！</p>
+        <a href="account.html#membership">我的收藏清單</a>
+      `;
+    }
+  }
+  alert('商品已加入購物車！');
+  updateCartCount();
+}
+
+function loadProducts() {
+  const productsGrid = document.querySelector('.products-grid');
+  if (!productsGrid) {
+    console.error('Products grid element not found');
+    return;
+  }
+  products.forEach((product, index) => {
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
+    productCard.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" class="product-image" data-index="${index}">
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <div class="price">NT$ ${product.price}</div>
+      <a href="#" class="cta-button">加入購物車</a>
+    `;
+    productCard.querySelector('.cta-button').addEventListener('click', function (e) {
+      e.preventDefault();
+      addToCart({
+        name: product.name,
+        price: product.price,
+        image: product.image
+      });
+    });
+    productCard.querySelector('.product-image').addEventListener('click', function (e) {
+      handleImageClick(e);
+    });
+    productsGrid.appendChild(productCard);
+  });
+}
+
+function handleImageClick(event) {
+  console.log('Image clicked');
+  const index = event.target.dataset.index;
+  console.log('Product index:', index);
+  if (index === undefined) {
+    console.error('Product index not found');
+    return;
+  }
+  const product = products[index];
+  if (!product) {
+    console.error('Product not found for index:', index);
+    return;
+  }
+  const modal = document.getElementById('product-modal');
+  const modalImage = document.getElementById('modal-image');
+  const modalName = document.getElementById('modal-name');
+  const modalDescription = document.getElementById('modal-description');
+  const modalPrice = document.getElementById('modal-price');
+  if (!modal || !modalImage || !modalName || !modalDescription || !modalPrice) {
+    console.error('Modal elements not found');
+    return;
+  }
+  modalImage.src = product.image;
+  modalImage.alt = product.name;
+  modalName.textContent = product.name;
+  modalDescription.textContent = product.description;
+  modalPrice.textContent = `NT$ ${product.price}`;
+  initRatingSystem(index);
+  loadComments(index);
+  const commentForm = document.getElementById('comment-form');
+  commentForm.onsubmit = (e) => {
+    e.preventDefault();
+    submitComment(index);
+  };
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  const modal = document.getElementById('product-modal');
+  if (!modal) {
+    console.error('Modal element not found');
+    return;
+  }
+  modal.style.display = 'none';
+}
+
+function loadComments(productId) {
+  const commentsList = document.getElementById('comments-list');
+  commentsList.innerHTML = '';
+  
+  if (productComments[productId]) {
+    productComments[productId].forEach(comment => {
+      const commentElement = document.createElement('div');
+      commentElement.className = 'comment';
+      commentElement.textContent = comment;
+      commentsList.appendChild(commentElement);
+    });
+  }
+}
+
+function submitComment(productId) {
+  const commentInput = document.getElementById('new-comment');
+  const comment = commentInput.value.trim();
+  
+  if (comment) {
+    if (!productComments[productId]) {
+      productComments[productId] = [];
+    }
+    
+    productComments[productId].push(comment);
+    loadComments(productId);
+    commentInput.value = '';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const closeBtn = document.querySelector('.close-btn');
+  const modal = document.getElementById('product-modal');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+  if (modal) {
+    modal.addEventListener('click', event => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  }
+  const modalAddToCartBtn = document.getElementById('add-to-cart-btn');
+  if (modalAddToCartBtn) {
+    modalAddToCartBtn.addEventListener('click', function () {
+      const modalName = document.getElementById('modal-name').textContent;
+      const modalPrice = document.getElementById('modal-price').textContent.replace('NT$ ', '');
+      const modalImage = document.getElementById('modal-image').src;
+      addToCart({
+        name: modalName,
+        price: parseInt(modalPrice),
+        image: modalImage
+      });
+      closeModal();
+    });
+  }
+  loadProducts();
+  updateCartCount();
+});</script>
+</body>
+</html>
+  

@@ -33,7 +33,7 @@
         <!-- 購物車下拉選單 -->
         <div class="cart-dropdown">
           <p class="cart-empty-text">購物車目前是空的！</p> 
-          <a href="https://shop.popmart.com/wishlist">我的收藏清單</a> 
+          <a href="account.html#gift">我的收藏清單</a> 
         </div>
       </div>
             
@@ -45,12 +45,11 @@
             <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
           </svg>
         </div>
-        <div class="member-dropdown">
+        <div class="member-dropdown" style="display: none;">
           <a href="#" style="cursor: pointer;">登入</a>
-          <a href="#membership">我的帳戶</a>
-          <a href="https://shop.popmart.com/orders" id="my-orders">我的訂單</a>
-          <a href="https://shop.popmart.com/coupons">我的優惠券</a>
-          <a href="#new-products">我的收藏清單</a>
+          <a href="account.html#myaccount">我的帳戶</a>
+
+          <a href="account.html#gift">我的收藏清單</a>
         </div>
       </div>
     </div>
@@ -64,8 +63,7 @@
 <nav>
   <div class="nav-links">
     <a href="#home">首頁</a>
-    <a href="test.html#countdown-container">聖誕節商品</a>
-    <a href="#countdown-container">所有商品</a>
+    <a href="allproduct.html">所有商品</a>
     <div class="popmart-dropdown" style="position: relative; display: inline-block;">
       <a href="#" style="display: flex; align-items: center; gap: 4px;">
         POPMART主題樂園
@@ -75,22 +73,24 @@
       </a>
       <div class="popmart-menu">
         <a href="#new-products">主題樂園限定商品</a>
-        <a href="#featured-products">LABUBU</a>
+        <a href="doll.html">LABUBU公仔</a>
+        <a href="blind.html">LABUBU盲盒</a>
         <a href="#new-products">SKULLPANDA</a>
         <a href="#featured-products">MOLLY</a>
         <a href="#new-products">CRYBABY系列</a>
         <a href="#featured-products">PUCKY</a>
       </div>
     </div>
-    <a href="#countdown-container">LABUBU公仔</a>
-    <a href="test.html#featured-products">LABUBU盲盒</a>
+    
     <a href="#new-products">新品上市</a>
     <a href="#featured-products">精選商品 </a>
     <a href="#membership">會員專區</a>
+    <a href="personaldata.html">認識我們</a>
     
     
   </div>
 </nav>
+
 
 <section id="home" class="hero">
   <img src="image/logo-search-grid-2x.png" alt="">
@@ -99,24 +99,40 @@
   <a href="#countdown-container" class="cta-button">SHOP NOW</a>
 </section>
 
+<div class="carousel">
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <a href="allproduct.html"><img src="image/LINE_ALBUM_27_241227_1.jpg" alt="Promo 1"></a>
+    </div>
+    <div class="carousel-slide">
+      <a href="blind.html"><img src="image/LINE_ALBUM_27_241227_3.jpg" alt="Promo 2"></a>
+    </div>
+    <div class="carousel-slide">
+      <a href="doll.html"><img src="image/LINE_ALBUM_27_241227_2.jpg" alt="Promo 3"></a>
+    </div>
+  </div>
+  
+  <button class="carousel-btn prev">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  
+  <button class="carousel-btn next">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+
+  <div class="carousel-dots"></div>
+</div>
+
 <div id="countdown-container" class="countdown-container">
   <div class="countdown-title">限時促銷倒計時</div>
   <div id="countdown"></div>
 </div>
   
-  <section id="promotional-banners" class="promotional-banners" style="padding: 2rem; background: white;">
-    <div style="display: flex; justify-content: center; gap: 2rem; max-width: 1400px; margin: 0 auto;">
-      <div style="flex: 1; max-width: 400px;">
-        <img src="image/LINE_ALBUM_27_241227_3.jpg" alt="Blind Box" style="width: 100%; height: auto; border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" >
-      </div>
-      <div style="flex: 1; max-width: 400px;">
-        <img src="image/LINE_ALBUM_27_241227_2.jpg" alt="Fashion Toys" style="width: 100%; height: auto; border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" >
-      </div>
-      <div style="flex: 1; max-width: 400px;">
-        <img src="image/LINE_ALBUM_27_241227_1.jpg" alt="R Brick" style="width: 100%; height: auto; border-radius: 10px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" >
-      </div>
-    </div>
-  </section>
+
   
   <section id="new-products" class="new-products">
     <h2 class="section-title">新品上市</h2>
@@ -129,6 +145,11 @@
           <p>此為壓克力殼(不含公仔)</p>
         <div class="price">NT$ 111</div>
         <a href="image/LINE_ALBUM_27_241227_1.jpg" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_5.jpg" alt="2024新春LABUBU2" class="product-image">
@@ -136,6 +157,11 @@
         <p>尺寸：約79.3cm (高)材質：PVC</p>
         <div class="price">NT$ 33000</div>
         <a href="https://shop.popmart.com/products/new-year-labubu2" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_6.jpg" alt="2024新春LABUBU3" class="product-image">
@@ -143,6 +169,11 @@
         <p>尺寸：約17.5cm (高)材質：聚酯纖維</p>
         <div class="price">NT$ 3800</div>
         <a href="https://shop.popmart.com/products/new-year-labubu3" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_7.jpg" alt="2024新春LABUBU4" class="product-image">
@@ -150,6 +181,11 @@
         <p>尺寸：約13m</p>
         <div class="price">NT$ 990</div>
         <a href="https://shop.popmart.com/products/new-year-labubu4" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_8.jpg" alt="2024新春LABUBU5" class="product-image">
@@ -158,6 +194,11 @@
           材質：聚酯纖維、絨布</p>
         <div class="price">NT$ 4200</div>
         <a href="https://shop.popmart.com/products/new-year-labubu5" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_9.jpg" alt="2024新春LABUBU6" class="product-image">
@@ -166,14 +207,24 @@
           附件：衣服</p>
         <div class="price">NT$ 4000</div>
         <a href="https://shop.popmart.com/products/new-year-labubu6" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_10.jpg" alt="2024新春LABUBU7" class="product-image">
-        <h3>POPMART 泡泡瑪特 Labubu 心動馬卡龍 一代 搪膠臉 系列盲盒
+        <h3>POPMART 泡泡瑪特 LABUBU 心動馬卡龍 一代 搪膠臉 系列盲盒
         </h3>
         <p>尺寸：約17m</p>
         <div class="price">NT$ 990</div>
         <a href="https://shop.popmart.com/products/new-year-labubu7" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_11.jpg" alt="2024新春LABUBU8" class="product-image">
@@ -182,6 +233,11 @@
         <p>整組5款，整組販售。</p>
         <div class="price">NT$ 9900</div>
         <a href="https://shop.popmart.com/products/new-year-labubu8" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_12.jpg" alt="2024新春LABUBU9" class="product-image">
@@ -194,6 +250,11 @@
           
         <div class="price">NT$ 58000</div>
         <a href="https://shop.popmart.com/products/new-year-labubu9" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_13.jpg" alt="2024新春LABUBU10" class="product-image">
@@ -203,6 +264,11 @@
           材質：PVC</p>
         <div class="price">NT$ 42900</div>
         <a href="https://shop.popmart.com/products/new-year-labubu10" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_14.jpg" alt="2024新春LABUBU11" class="product-image">
@@ -211,6 +277,11 @@
           材質：PVC</p>
         <div class="price">NT$ 990</div>
         <a href="https://shop.popmart.com/products/new-year-labubu11" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_15.jpg" alt="2024新春LABUBU12" class="product-image">
@@ -219,6 +290,11 @@
         </p>
         <div class="price">NT$ 14800</div>
         <a href="https://shop.popmart.com/products/new-year-labubu12" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
@@ -236,6 +312,11 @@
           <P>此為盲盒非指定款，中盒內款式不重複</P>
         <div class="price">NT$ 890</div>
         <a href="https://shop.popmart.com/products/christmas-labubu" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_17.jpg" alt="2024新春LABUBU" class="product-image">
@@ -247,6 +328,11 @@
           <P>此為盲盒非指定款，中盒內款式不重複</P>
         <div class="price">NT$ 1200</div>
         <a href="https://shop.popmart.com/products/christmas-labubu2" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_18.jpg" alt="2024新春LABUBU" class="product-image">
@@ -257,6 +343,11 @@
         <P>尺寸：約18cm</P>
         <P>此為盲盒非指定款，中盒內款式不重複</P>        <div class="price">NT$ 380</div>
         <a href="https://shop.popmart.com/products/christmas-labubu3" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_19.jpg" alt="2024新春LABUBU" class="product-image">
@@ -267,6 +358,11 @@
         <P>此為盲盒非指定款，中盒內款式不重複</P>        
         <div class="price">NT$ 400</div>
         <a href="https://shop.popmart.com/products/christmas-labubu4" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_20.jpg" alt="2024新春LABUBU" class="product-image">
@@ -277,6 +373,11 @@
         <P>此為盲盒非指定款，中盒內款式不重複</P>
         <div class="price">NT$ 480</div>
         <a href="https://shop.popmart.com/products/christmas-labubu5" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_21.jpg" alt="2024新春LABUBU" class="product-image">
@@ -287,16 +388,24 @@
         <P>此為盲盒非指定款，中盒內款式不重複</P>
         <div class="price">NT$ 4200</div>
         <a href="https://shop.popmart.com/products/christmas-labubu6" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_22.jpg" alt="2024新春LABUBU" class="product-image">
         <h3>POPMART 泡泡瑪特 ZIMOMO LABUBU ORIGINAL 首領 毛絨 娃娃</h3>
-        <p>一中盒6抽</p>
-        <P>款式：基本款 6、隱藏款 1</P>
-        <P>尺寸：約18cm</P>
-        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <p>尺寸：約58cm (高)
+        </p>
         <div class="price">NT$ 13800</div>
         <a href="https://shop.popmart.com/products/christmas-labubu7" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_23.jpg" alt="2024新春LABUBU" class="product-image">
@@ -308,6 +417,11 @@
         <P>此為盲盒非指定款，中盒內款式不重複</P>
         <div class="price">NT$ 890</div>
         <a href="https://shop.popmart.com/products/christmas-labubu8" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_24.jpg" alt="2024新春LABUBU" class="product-image">
@@ -319,36 +433,50 @@
         <P>此為盲盒非指定款，中盒內款式不重複</P>
         <div class="price">NT$ 400</div>
         <a href="https://shop.popmart.com/products/christmas-labubu9" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_25.jpg" alt="2024新春LABUBU" class="product-image">
         <h3>POPMART 泡泡瑪特 LABUBU 毛絨翻翻 手提包 樂園限定        </h3>
-        <p>一中盒10抽</p>
-        <P>款式：基本款 12、隱藏款 1</P>
-        <P>尺寸：約10cm</P>
-        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <p>尺寸：約58cm (高)
+        </p>
         <div class="price">NT$ 890</div>
         <a href="https://shop.popmart.com/products/christmas-labubu10" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_26.jpg" alt="2024新春LABUBU" class="product-image">
         <h3>POPMART 泡泡瑪特 LABUBU 藍帽 站肩磁吸 毛絨 娃娃 樂園限定        </h3>
-        <p>一中盒10抽</p>
-        <P>款式：基本款 12、隱藏款 1</P>
-        <P>尺寸：約10cm</P>
-        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <p>尺寸：約58cm (高)
+        </p>
         <div class="price">NT$ 890</div>
         <a href="https://shop.popmart.com/products/christmas-labubu11" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
       <div class="product-card">
         <img src="image/LINE_ALBUM_27_241228_27.jpg" alt="2024新春LABUBU" class="product-image">
         <h3>POPMART 泡泡瑪特 怪怪狂歡 南瓜夜光冰箱貼        </h3>
-        <p>一中盒10抽</p>
-        <P>款式：基本款 12、隱藏款 1</P>
-        <P>尺寸：約10cm</P>
-        <P>此為盲盒非指定款，中盒內款式不重複</P>
+        <p>尺寸：約58cm (高)
+        </p>
         <div class="price">NT$ 310</div>
         <a href="https://shop.popmart.com/products/christmas-labubu12" class="cta-button">加入購物車</a>
+        <div style="position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
@@ -399,17 +527,7 @@
           <p><a href="know.html">購物指南</a></p>
           <p><a href="privacy.html">隱私政策</a></p>
         </div>
-        <div class="nav-dropdowns">
-        <select class="currency-select" onchange="changeCurrency(this.value)">
-          <option value="TWD">NT$ TWD</option>
-          <option value="USD">US$ USD</option>
-        </select>
-        <select class="language-select" onchange="changeLanguage(this.value)">
-          <option value="zh">中文</option>
-          <option value="en">English</option>
-        </select>
-      </div>
-      </div>
+        
     </div>
   </footer>
   
@@ -432,234 +550,404 @@
   </div>
   
   <script>
-  // 初始化購物車及倒計時邏輯
-  const cartItems = [];
-  let cartCount = 0;
-  const cartCountElement = document.querySelector('.cart-count');
-
-  // 更新購物車內容
-  function updateCart() {
-    const cartDropdown = document.querySelector('.cart-dropdown');
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-    if (cartItems.length === 0) {
-      cartDropdown.innerHTML = `
-          <p class="cart-empty-text">購物車目前是空的！</p>
-          <a href="shopcar.html">我的收藏清單</a>
-        `;
-    } else {
-      let cartHTML = '<div class="cart-items">';
-      cartItems.forEach(item => {
-        cartHTML += `
-            <div class="cart-item">
-              <h4>${item.name}</h4>
-              <p>${item.price}</p>
-            </div>
+    // 初始化購物車及倒計時邏輯
+    const cartItems = [];
+    let cartCount = 0;
+    const cartCountElement = document.querySelector('.cart-count');
+    
+    const wishlistItems = [];
+    
+    // 更新購物車內容
+    function updateCart() {
+      const cartDropdown = document.querySelector('.cart-dropdown');
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      
+      if (cartItems.length === 0) {
+        cartDropdown.innerHTML = `
+            <p class="cart-empty-text">購物車目前是空的！</p>
+            <a href="shopcar.html">我的收藏清單</a>
           `;
-      });
-      cartHTML += '</div>';
-      cartHTML += `
-        <a href="shopcar.html" class="cta-button" style="width: 100%; margin-top: 1rem; text-align: center;">立即購買</a>
-      `;
-      cartDropdown.innerHTML = cartHTML;
+      } else {
+        let cartHTML = '<div class="cart-items">';
+        cartItems.forEach(item => {
+          cartHTML += `
+              <div class="cart-item">
+                <h4>${item.name}</h4>
+                <p>${item.price}</p>
+              </div>
+            `;
+        });
+        cartHTML += '</div>';
+        cartHTML += `
+          <a href="shopcar.html" class="cta-button" style="width: 100%; margin-top: 1rem; text-align: center;">立即購買</a>
+        `;
+        cartDropdown.innerHTML = cartHTML;
+      }
     }
+    //今天增加
+    // 更新購物車數量顯示功能
+  function updateCartCount() {
+    const cartCountElement = document.querySelector('.cart-count');
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cartCountElement.textContent = cartItems.length;
   }
-  // 設置icon上的 "加入購物車" 按鈕邏輯
-  document.querySelectorAll('.cta-button').forEach(button => {
-    if (button.textContent === '加入購物車') {
-      button.addEventListener('click', function (e) {
+
+// 頁面加載時調用 updateCartCount
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount(); // 更新購物車數量顯示
+    loadProducts(); // 加載產品到網格中
+  });
+    
+    document.querySelectorAll('.product-card').forEach(card => {
+      // Add heart icon to each product card
+      const heartIcon = document.createElement('div');
+      heartIcon.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+             style="width: 24px; height: 24px; position: absolute; top: 1rem; right: 1rem; cursor: pointer;">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      `;
+      heartIcon.style.position = 'absolute';
+      heartIcon.style.top = '1rem';
+      heartIcon.style.right = '1rem';
+      heartIcon.style.cursor = 'pointer';
+      
+      // Add click event listener to heart icon
+      heartIcon.addEventListener('click', (e) => {
         e.preventDefault();
-        const card = this.closest('.product-card');
         const productName = card.querySelector('h3').textContent;
         const productPrice = card.querySelector('.price').textContent;
-        // 將商品加入購物車陣列
-        cartItems.push({
-          name: productName,
-          price: parseFloat(productPrice.replace('NT$', '').trim()), // 確保價格為數字
-          quantity: 1, // 初始數量設為1
-          image: 'path/to/image.jpg' // 包含商品的圖片路徑
+        const productImage = card.querySelector('.product-image').src;
+        
+        // Check if item is already in wishlist
+        const existingItemIndex = wishlistItems.findIndex(item => item.name === productName);
+        
+        if (existingItemIndex === -1) {
+          // Add to wishlist
+          wishlistItems.push({
+            name: productName,
+            price: productPrice,
+            image: productImage
+          });
+          heartIcon.querySelector('svg').style.fill = '#ff4d4d';
+          updateWishlist();
+          alert('商品已加入收藏清單！');
+        } else {
+          // Remove from wishlist
+          wishlistItems.splice(existingItemIndex, 1);
+          heartIcon.querySelector('svg').style.fill = 'none';
+          updateWishlist();
+          alert('商品已從收藏清單移除！');
+        }
+      });
+      
+      card.style.position = 'relative';
+      card.appendChild(heartIcon);
+    });
+    
+    // Update wishlist in member dropdown
+    function updateWishlist() {
+      const wishlistLinks = document.querySelectorAll('a[href="allproduct.html#membership"]');
+      wishlistLinks.forEach(link => {
+        link.textContent = `我的收藏清單 (${wishlistItems.length})`;
+      });
+      
+      // Save wishlist to localStorage
+      localStorage.setItem('wishlistItems', JSON.stringify(wishlistItems));
+    }
+    
+    // Load wishlist from localStorage on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedWishlist = localStorage.getItem('wishlistItems');
+      if (savedWishlist) {
+        wishlistItems.push(...JSON.parse(savedWishlist));
+        updateWishlist();
+        
+        // Update heart icons for saved items
+        document.querySelectorAll('.product-card').forEach(card => {
+          const productName = card.querySelector('h3').textContent;
+          if (wishlistItems.some(item => item.name === productName)) {
+            card.querySelector('svg').style.fill = '#ff4d4d';
+          }
         });
-
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-        cartCount++;// 更新購物車數量
-        cartCountElement.textContent = cartCount;
-        updateCart();
-        alert('商品已加入購物車！');
-      });
-    }
-  });
-  // 使用 IntersectionObserver 為商品卡片添加動畫
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
       }
-    });
-  }, {
-    threshold: 0.1 // 當元素的10%進入視口時觸發
-  });
+      const memberIcon = document.querySelector('.member-icon-container');
+      const memberDropdown = document.querySelector('.member-dropdown');
 
-    
-  // 設置每個商品卡片的初始樣式
-  document.querySelectorAll('.product-card').forEach(card => {
-    card.style.opacity = '0';// 初始不透明度設為0
-    card.style.transform = 'translateY(20px)';// 初始位移設為20px
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';// 過渡效果
-    observer.observe(card);// 開始觀察商品卡片
+    // 添加點擊事件
+    memberIcon.addEventListener('click', (event) => {
+      event.stopPropagation(); // 防止事件冒泡
+      const isVisible = memberDropdown.style.display === 'block';
+      memberDropdown.style.display = isVisible ? 'none' : 'block';
+    });
+
+    // 點擊頁面其他地方時隱藏下拉菜單
+    document.addEventListener('click', () => {
+      memberDropdown.style.display = 'none';
+    });
   });
-  // 處理會員註冊表單提交
-  function handleSubmit(event) {
-    event.preventDefault();// 防止表單默認提交
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      password: document.getElementById('password').value,
-      phone: document.getElementById('phone').value
-    };
-    alert('註冊成功！歡迎加入POPMART LABUBU會員！');
-    event.target.reset();// 清空表單
-    return false;// 防止表單的實際提交
-  }
-  // 平滑滾動到指定的anchor區域
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();// 防止默認行為
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'// 使用平滑滾動
+    
+    // Add click handler for wishlist link
+    document.querySelectorAll('a[href="account.html#membership"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        showWishlistPage();
       });
     });
-  });
-  // 顯示登入模態框
-  function showLoginModal() {
-    document.getElementById('login-modal').style.display = 'block';
-  }
-   // 隱藏登入模態框
-  function hideLoginModal() {
-    document.getElementById('login-modal').style.display = 'none';
-  }
-   // 處理登入表單提交
-  function handleLogin(event) {
-    event.preventDefault();// 防止表單默認提交
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
-    console.log('Login attempt:', email); // 在控制台打印登入嘗試
-    hideLoginModal(); // 隱藏登入模態框
-    alert('登入成功！'); // 登入成功提示
-    return false; // 防止表單的實際提交
-  }
-  // 設置登入按鈕的事件監聽器
-  document.querySelector('.member-dropdown a[href="#"]').addEventListener('click', function (e) {
-    e.preventDefault(); // 防止默認行為
-    showLoginModal(); // 顯示登入模態框
-  });
-
-  // 點擊模態框以外的區域隱藏模態框
-  document.getElementById('login-modal').addEventListener('click', function (e) {
-    if (e.target === this) {
-      hideLoginModal(); // 隱藏模態框
-    }
-  });
-  // 顯示訂單頁面
-  function showOrdersPage() {
-    const mainContent = document.createElement('div');
-    mainContent.style.padding = '120px 2rem 2rem';
-    mainContent.style.maxWidth = '1400px';
-    mainContent.style.margin = '0 auto';
-    // 生成訂單頁面內容
-    mainContent.innerHTML = `
-      <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 2rem;">我的訂單</h2>
-      <div id="orders-container" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        <div style="text-align: center; color: var(--text); padding: 2rem;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 64px; height: 64px; margin-bottom: 1rem; color: var(--light)">
-            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-          </svg>
-          <p>目前沒有訂單記錄</p>
-          <a href="#" class="cta-button" style="margin-top: 1rem; display: inline-block;">開始購物</a>
-        </div>
-      </div>
-    `;
-    const currentContent = document.querySelector('main') || document.querySelector('section:not(nav)');
-    if (currentContent) {
-      currentContent.parentNode.insertBefore(mainContent, currentContent); // 在當前內容之前插入新內容
-      currentContent.style.display = 'none'; // 隱藏當前內容
-    }
-  }
-  // 設置訂單按鈕的事件監聽器
-  document.querySelector('a[href="https://shop.popmart.com/orders"]').addEventListener('click', function (e) {
-    e.preventDefault(); // 防止默認行為
-    showOrdersPage(); // 顯示訂單頁面
-  });
-  // 顯示優惠券頁面
-  function showCouponsPage() {
-    const mainContent = document.createElement('div');
-    mainContent.style.padding = '120px 2rem 2rem';
-    mainContent.style.maxWidth = '1400px';
-    mainContent.style.margin = '0 auto';
-    // 生成優惠券頁面內容
-    mainContent.innerHTML = `
-      <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 2rem;">我的優惠券</h2>
-      <div id="coupons-container" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        <div style="text-align: center; color: var(--text); padding: 2rem;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 64px; height: 64px; margin-bottom: 1rem; color: var(--light)">
-            <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
-          </svg>
-          <p>目前沒有可用的優惠券</p>
-          <a href="#" class="cta-button" style="margin-top: 1rem; display: inline-block;">開始購物</a>
-        </div>
-      </div>
-    `;
-    const currentContent = document.querySelector('main') || document.querySelector('section:not(nav)');
-    if (currentContent) {
-      currentContent.parentNode.insertBefore(mainContent, currentContent); // 在當前內容之前插入新內容
-      currentContent.style.display = 'none'; // 隱藏當前內容
-    }
-  }
-  // 設置優惠券按鈕的事件監聽器
-  document.querySelector('a[href="https://shop.popmart.com/coupons"]').addEventListener('click', function (e) {
-    e.preventDefault(); // 防止默認行為
-    showCouponsPage(); // 顯示優惠券頁面
-  });
-  
-  // 初始化倒計時
-  function initializeCountdown() {
-    // 設置促銷結束日期
-    const endDate = new Date();
-    endDate.setDate(endDate.getDate() + 1); // 定義結束日期為今天的下一天
     
-    function updateCountdown() {
-      const now = new Date();
-      const distance = endDate - now;// 計算當前時間與結束時間之間的差距
+    // Show wishlist page
+    function showWishlistPage() {
+      const mainContent = document.createElement('div');
+      mainContent.style.padding = '120px 2rem 2rem';
+      mainContent.style.maxWidth = '1400px';
+      mainContent.style.margin = '0 auto';
       
-      // 計算天、時、分、秒
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      // 更新倒計時顯示
-      document.getElementById('countdown').innerHTML = `
-        <div class="countdown-item">${days}<span>天</span></div>
-        <div class="countdown-item">${hours}<span>時</span></div>
-        <div class="countdown-item">${minutes}<span>分</span></div>
-        <div class="countdown-item">${seconds}<span>秒</span></div>
+      let wishlistHTML = `
+        <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 2rem;">我的收藏清單</h2>
+        <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
       `;
       
-      // 當時間結束時清除計時器
-      if (distance < 0) {
-        clearInterval(countdownTimer);
-        document.getElementById('countdown').innerHTML = "促銷活動已結束！";
+      if (wishlistItems.length === 0) {
+        wishlistHTML += `
+          <div style="text-align: center; color: var(--text); padding: 2rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 64px; height: 64px; margin-bottom: 1rem; color: var(--light)">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            <p>收藏清單是空的</p>
+            <a href="#" class="cta-button" style="margin-top: 1rem; display: inline-block;">繼續購物</a>
+          </div>
+        `;
+      } else {
+        wishlistHTML += `
+          <div class="products-grid">
+            ${wishlistItems.map(item => `
+              <div class="product-card">
+                <img src="${item.image}" alt="${item.name}" class="product-image">
+                <h3>${item.name}</h3>
+                <div class="price">${item.price}</div>
+                <a href="#" class="cta-button">加入購物車</a>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+      
+      wishlistHTML += '</div>';
+      mainContent.innerHTML = wishlistHTML;
+      
+      const currentContent = document.querySelector('main') || document.querySelector('section:not(nav)');
+      if (currentContent) {
+        currentContent.parentNode.insertBefore(mainContent, currentContent);
+        currentContent.style.display = 'none';
       }
     }
     
-    updateCountdown();// 初始化倒計時顯示
-    const countdownTimer = setInterval(updateCountdown, 1000); // 每秒更新一次
+    // 設置icon上的 "加入購物車" 按鈕邏輯
+document.querySelectorAll('.cta-button').forEach(button => {
+  if (button.textContent === '加入購物車') {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // 獲取商品卡片元素
+      const card = this.closest('.product-card');
+      const productName = card.querySelector('h3').textContent;
+      const productPrice = card.querySelector('.price').textContent;
+      const productImage = card.querySelector('.product-image').src; // 獲取商品圖片的路徑
+
+      // 將商品加入購物車陣列
+      cartItems.push({
+        name: productName,
+        price: parseFloat(productPrice.replace('NT$', '').trim()), // 確保價格為數字
+        quantity: 1, // 初始數量設為1
+        image: productImage // 動態提取的圖片路徑
+      });
+
+      // 更新 localStorage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      // 更新購物車數量
+      cartCount++;
+      cartCountElement.textContent = cartCount;
+
+      // 更新購物車內容顯示
+      updateCart();
+
+      alert('商品已加入購物車！');
+    });
   }
-  
-  document.addEventListener('DOMContentLoaded', initializeCountdown);// 當DOM內容加載完成時，初始化倒計時
-  </script>
+});
+    
+    // 使用 IntersectionObserver 為商品卡片添加動畫
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {
+      threshold: 0.1 // 當元素的10%進入視口時觸發
+    });
+    
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.style.opacity = '0';// 初始不透明度設為0
+      card.style.transform = 'translateY(20px)';// 初始位移設為20px
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';// 過渡效果
+      observer.observe(card);// 開始觀察商品卡片
+    });
+    
+    // 處理會員註冊表單提交
+    function handleSubmit(event) {
+      event.preventDefault();// 防止表單默認提交
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        phone: document.getElementById('phone').value
+      };
+      alert('註冊成功！歡迎加入POPMART LABUBU會員！');
+      event.target.reset();// 清空表單
+      return false;// 防止表單的實際提交
+    }
+    
+    // 平滑滾動到指定的anchor區域
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();// 防止默認行為
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'// 使用平滑滾動
+        });
+      });
+    });
+    
+    // 顯示登入模態框
+    function showLoginModal() {
+      document.getElementById('login-modal').style.display = 'block';
+    }
+    
+    // 隱藏登入模態框
+    function hideLoginModal() {
+      document.getElementById('login-modal').style.display = 'none';
+    }
+    
+    // 處理登入表單提交
+    function handleLogin(event) {
+      event.preventDefault();// 防止表單默認提交
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      console.log('Login attempt:', email); // 在控制台打印登入嘗試
+      hideLoginModal(); // 隱藏登入模態框
+      alert('登入成功！'); // 登入成功提示
+      return false; // 防止表單的實際提交
+    }
+    
+    // 設置登入按鈕的事件監聽器
+    document.querySelector('.member-dropdown a[href="#"]').addEventListener('click', function (e) {
+      e.preventDefault(); // 防止默認行為
+      showLoginModal(); // 顯示登入模態框
+    });
+    
+    // 點擊模態框以外的區域隱藏模態框
+    document.getElementById('login-modal').addEventListener('click', function (e) {
+      if (e.target === this) {
+        hideLoginModal(); // 隱藏模態框
+      }
+    });
+    
+    
+    // 初始化倒計時
+    function initializeCountdown() {
+      // 設置促銷結束日期
+      const endDate = new Date();
+      endDate.setDate(endDate.getDate() + 1); // 定義結束日期為今天的下一天
+      
+      function updateCountdown() {
+        const now = new Date();
+        const distance = endDate - now;// 計算當前時間與結束時間之間的差距
+        
+        // 計算天、時、分、秒
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // 更新倒計時顯示
+        document.getElementById('countdown').innerHTML = `
+          <div class="countdown-item">${days}<span>天</span></div>
+          <div class="countdown-item">${hours}<span>時</span></div>
+          <div class="countdown-item">${minutes}<span>分</span></div>
+          <div class="countdown-item">${seconds}<span>秒</span></div>
+        `;
+        
+        // 當時間結束時清除計時器
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.getElementById('countdown').innerHTML = "促銷活動已結束！";
+        }
+      }
+      
+      updateCountdown();// 初始化倒計時顯示
+      const countdownTimer = setInterval(updateCountdown, 1000); // 每秒更新一次
+    }
+    
+    document.addEventListener('DOMContentLoaded', initializeCountdown);// 當DOM內容加載完成時，初始化倒計時
+    
+    function initCarousel() {
+      const container = document.querySelector('.carousel-container');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const dotsContainer = document.querySelector('.carousel-dots');
+    
+      let currentIndex = 0;
+      const slideCount = slides.length;
+    
+      // Create dots
+      slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+    
+      // Update dots
+      function updateDots() {
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+    
+      // Go to specific slide
+      function goToSlide(index) {
+        currentIndex = index;
+        container.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+      }
+    
+      // Next slide
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        goToSlide(currentIndex);
+      }
+    
+      // Previous slide
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        goToSlide(currentIndex);
+      }
+    
+      // Add button listeners
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+    
+      // Auto-advance slides
+      setInterval(nextSlide, 5000);
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      initCarousel();
+    });
+    </script>
   </body>
   </html>
-
-  
